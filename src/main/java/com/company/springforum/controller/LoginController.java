@@ -48,10 +48,6 @@ public class LoginController {
         return new ResponseEntity<>(new Status("Bad",null), HttpStatus.BAD_REQUEST);
     }
 
-    @GetMapping("/test")
-    public ResponseEntity<Status> test() {
-            return new ResponseEntity<>(new Status("OK",  new Receiver("helol","askdje","asdad")), HttpStatus.OK);
-    }
 
     @PostMapping("/phonelogin")
     public ResponseEntity<RegisterStatus> loginByPhone(@RequestBody Phone phone) {
@@ -73,6 +69,11 @@ public class LoginController {
 
     @GetMapping("/freelogin")
     public String getEmail() {
+        return "email";
+    }
+
+    @GetMapping("/test")
+    public String test() {
         return "email";
     }
 
